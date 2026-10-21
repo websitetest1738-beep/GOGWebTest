@@ -54,6 +54,22 @@
 .hero-video-container{position:absolute;inset:0;z-index:0;overflow:hidden;background:#111;}
 .hero-vid-blur{position:absolute;top:50%;left:50%;width:100%;height:auto;min-height:100%;transform:translate(-50%,-50%) scale(1.2);filter:blur(25px) brightness(0.4) saturate(1.4);pointer-events:none;object-fit:fill;}
 .hero-vid-sharp{position:absolute;top:50%;left:50%;height:100%;width:auto;transform:translate(-50%,-50%);pointer-events:none;z-index:1;}
+
+/* ── Hero badge: stronger contrast ── */
+.hero-badge{color:#e8c77f;background:rgba(10,12,10,0.62);border:1px solid rgba(212,175,110,0.75);font-size:11px;font-weight:700;text-shadow:0 1px 3px rgba(0,0,0,0.8);box-shadow:0 2px 12px rgba(0,0,0,0.45);}
+/* ── Hero stats: room for the financing box ── */
+.hero-inner{max-width:920px;}.hero-stat{padding:18px 24px;}.hero-stat-label{white-space:nowrap;}
+@media(max-width:768px){.hero-badge{font-size:9px;letter-spacing:.1em;padding:6px 14px;}.hero-stat-label{white-space:normal;}.hero-stat-finance{flex:1 1 100%;}}
+
+/* ── Specialist Difference: 5 cards ── */
+.why-grid{grid-template-columns:repeat(5,1fr);}
+.why-card{padding:36px 24px;}
+@media(max-width:1024px){.why-grid{grid-template-columns:repeat(2,1fr);}.why-grid .why-card:last-child{grid-column:1/-1;}}
+@media(max-width:768px){.why-grid{grid-template-columns:1fr;}}
+
+/* ── Hero logo: deeper, richer colors ── */
+.hero-logo img{filter:saturate(1.55) contrast(1.25) brightness(0.78) drop-shadow(0 2px 3px rgba(0,0,0,0.55)) drop-shadow(0 0 6px rgba(0,0,0,0.35)) drop-shadow(0 0 18px rgba(184,149,90,0.55)) drop-shadow(0 0 40px rgba(184,149,90,0.35)) drop-shadow(0 0 80px rgba(61,139,65,0.25));}
+.hero-logo img:hover{filter:saturate(1.55) contrast(1.25) brightness(0.78) drop-shadow(0 2px 3px rgba(0,0,0,0.55)) drop-shadow(0 0 6px rgba(0,0,0,0.35)) drop-shadow(0 0 22px rgba(184,149,90,0.75)) drop-shadow(0 0 55px rgba(184,149,90,0.5)) drop-shadow(0 0 100px rgba(61,139,65,0.35));}
 </style>
 <script type="application/ld+json">
 {
@@ -112,6 +128,7 @@
       <div class="hero-stats">
         <div class="hero-stat"><span class="hero-stat-val">25+</span><span class="hero-stat-label">Years experience</span></div>
         <div class="hero-stat"><span class="hero-stat-val">&#10003;</span><span class="hero-stat-label">Warranty accepted</span></div>
+        <div class="hero-stat hero-stat-finance"><span class="hero-stat-val">Financing Offered</span><span class="hero-stat-label">No interest if paid within 90 days</span></div>
         <div class="hero-stat"><span class="hero-stat-val">M&ndash;F</span><span class="hero-stat-label">8am &ndash; 6pm</span></div>
         <div class="hero-stat"><span class="hero-stat-val">OEM</span><span class="hero-stat-label">Parts &amp; tooling</span></div>
       </div>
@@ -185,6 +202,7 @@
       <div class="why-grid">
         <div class="why-card"><div class="why-number">25+</div><div class="why-title">Years Of Experience</div><p class="why-desc">Exclusively focused on Land Rover vehicles since our founding &mdash; deep familiarity with every model, generation, and known issue.</p></div>
         <div class="why-card"><div class="why-number">&#10003;</div><div class="why-title">Warranty Assistance</div><p class="why-desc">We accept and assist with extended warranty coverage and claims, handling paperwork and communication so you don&rsquo;t have to.</p></div>
+        <div class="why-card"><div class="why-number">0%</div><div class="why-title">Financing Offered</div><p class="why-desc">No interest if paid within 90 days. Flexible financing options so a needed repair doesn&rsquo;t have to wait.</p></div>
         <div class="why-card"><div class="why-number">OEM</div><div class="why-title">Specialized Tooling</div><p class="why-desc">Land Rover-specific diagnostic equipment and genuine OEM parts &mdash; the right tools for the job, not generic alternatives.</p></div>
         <div class="why-card"><div class="why-number">FL</div><div class="why-title">Local &amp; Family-Owned</div><p class="why-desc">Based in Winter Park, we understand Central Florida&rsquo;s unique driving conditions and treat every customer like a neighbor.</p></div>
       </div>
