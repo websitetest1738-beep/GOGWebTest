@@ -201,6 +201,50 @@
 .abB-close{max-width:720px;margin:28px auto 0;text-align:center;font-size:15px;line-height:1.85;color:var(--text-dim);font-weight:300;}
 @media(max-width:1024px){.abB-grid,.abB-cols{grid-template-columns:1fr;gap:44px;}.abB-photo{justify-self:center;}.abB-hero,.abB-story,.abB-quote{padding-left:28px;padding-right:28px;}}
 @media(max-width:768px){.abB-hero{padding:48px 16px;}.abB-story,.abB-quote{padding:56px 16px;}}
+
+/* ── Reviews: names, Google mark, read-more ── */
+a.reviews-badge{text-decoration:none;transition:border-color .2s;}
+a.reviews-badge:hover{border-color:var(--gold);}
+.reviews-badge-google .review-g{width:13px;height:13px;}
+.review-card-text.clamped{display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;overflow:hidden;flex-grow:0;}
+.review-card .review-card-author{margin-top:auto;}
+.reviews-cta a{text-decoration:none;}
+.review-more{align-self:flex-start;background:none;border:none;padding:0;margin-top:-6px;color:var(--gold-light);font-family:var(--font-b);font-size:12px;font-weight:600;letter-spacing:.06em;cursor:pointer;}
+.review-more:hover{text-decoration:underline;}
+.review-card-name{font-size:13px;color:var(--text-main);font-weight:500;}
+.review-card-src{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text-muted);margin-top:2px;}
+.review-g{width:12px;height:12px;flex:none;}
+
+/* ── Reviews: make it pop ── */
+.reviews-section{position:relative;overflow:hidden;background:radial-gradient(ellipse 60% 50% at 85% 0%,rgba(184,149,90,0.10),transparent 70%),radial-gradient(ellipse 50% 60% at 0% 100%,rgba(61,139,65,0.12),transparent 70%),var(--page-home);border-top:1px solid rgba(184,149,90,0.18);}
+.reviews-sub{font-size:15px;color:var(--text-dim);margin-top:12px;font-weight:300;max-width:520px;}
+a.reviews-badge{gap:18px;padding:18px 26px;border:1px solid rgba(184,149,90,0.55);background:linear-gradient(135deg,#3a3a3a,#2f2f2f);box-shadow:0 10px 30px rgba(0,0,0,0.35),0 0 0 4px rgba(184,149,90,0.06);}
+a.reviews-badge:hover{border-color:var(--gold-light);transform:translateY(-2px);}
+a.reviews-badge{transition:transform .25s,border-color .25s;}
+.reviews-badge-score{font-size:48px;line-height:1;color:var(--gold-light);}
+.reviews-badge-stars{font-size:22px;letter-spacing:3px;text-shadow:0 0 12px rgba(240,193,75,0.35);}
+.reviews-badge-google{margin-top:4px;font-size:11px;}
+.reviews-grid{gap:20px;}
+.review-card{position:relative;overflow:hidden;background:linear-gradient(180deg,#3a3a3a 0%,#323232 100%);border:1px solid rgba(255,255,255,0.06);border-top:2px solid var(--gold);border-radius:8px;padding:28px 26px 24px;box-shadow:0 8px 24px rgba(0,0,0,0.25);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;}
+.review-card::before{content:'\201C';position:absolute;top:-28px;right:14px;font-family:Georgia,serif;font-size:150px;line-height:1;color:var(--gold);opacity:.10;pointer-events:none;}
+.review-card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(0,0,0,0.45),0 0 0 1px rgba(184,149,90,0.35);}
+.review-card-stars{font-size:17px;letter-spacing:3px;text-shadow:0 0 10px rgba(240,193,75,0.3);}
+.review-card-text{color:#d6d3cc;font-size:14.5px;}
+.review-card-avatar{width:38px;height:38px;font-size:13px;box-shadow:0 0 0 2px rgba(184,149,90,0.45);}
+.review-card[style*="--av:1"] .review-card-avatar{background:linear-gradient(135deg,#b8955a,#6b5530);}
+.review-card[style*="--av:2"] .review-card-avatar{background:linear-gradient(135deg,#2a6b2e,#3d8b41);}
+.review-card[style*="--av:3"] .review-card-avatar{background:linear-gradient(135deg,#5b6b78,#2e3a44);}
+.review-card-name{font-size:14px;font-weight:600;}
+.review-card--featured{grid-column:span 2;grid-row:span 2;padding:44px 44px 36px;background:radial-gradient(ellipse at 100% 0%,rgba(184,149,90,0.16),transparent 55%),linear-gradient(160deg,#2f4a31 0%,#2b3a2c 45%,#323232 100%);border-top-width:3px;}
+.review-card--featured::before{font-size:260px;top:-56px;right:24px;opacity:.16;}
+.review-card--featured .review-card-stars{font-size:24px;}
+.review-card--featured .review-card-text{font-family:var(--font-d);font-size:clamp(20px,1.9vw,27px);line-height:1.55;color:var(--text-main);}
+.review-card--featured .review-card-text.clamped{-webkit-line-clamp:9;}
+.review-card--featured .review-card-avatar{width:48px;height:48px;font-size:15px;}
+.review-card--featured .review-card-name{font-size:16px;}
+.review-badge-new{display:inline-block;margin-left:10px;padding:3px 9px;border-radius:20px;background:rgba(240,193,75,0.15);border:1px solid rgba(240,193,75,0.45);color:#f0c14b;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;vertical-align:middle;}
+@media(max-width:1024px){.review-card--featured{grid-column:span 2;grid-row:auto;}}
+@media(max-width:768px){.review-card--featured{grid-column:auto;padding:30px 24px 26px;}.review-card--featured::before{font-size:180px;top:-36px;}.reviews-badge-score{font-size:40px;}a.reviews-badge{width:100%;justify-content:center;}}
 </style>
 <script type="application/ld+json">
 {
@@ -289,41 +333,45 @@
         <div>
           <div class="section-label">Customer Reviews</div>
           <div class="section-title">What Our Customers Say</div>
+          <p class="reviews-sub">The latest from our Google reviews &mdash; real Land Rover owners, in their own words.</p>
         </div>
-        <div class="reviews-badge">
+        <a class="reviews-badge" href="https://www.google.com/maps?cid=13777822756130762831" target="_blank" rel="noopener" aria-label="Rated 4.6 out of 5 from 98 Google reviews">
+          <div class="reviews-badge-score">4.6</div>
           <div>
             <div class="reviews-badge-stars">★★★★★</div>
-            <div class="reviews-badge-google">Google Reviews</div>
+            <div class="reviews-badge-google"><svg class="review-g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.4h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.2-2.1 3.5-5.1 3.5-8.7z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-2.9l-3.9-3c-1.1.7-2.5 1.2-4.1 1.2-3.1 0-5.8-2.1-6.7-5H1.3v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6V6.6H1.3a12 12 0 0 0 0 10.8l4-3.1z"/><path fill="#EA4335" d="M12 4.8c1.8 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 0 0 1.3 6.6l4 3.1c.9-2.9 3.6-4.9 6.7-4.9z"/></svg>98 Google reviews</div>
           </div>
-          <div>
-            <div class="reviews-badge-score">4.5</div>
-            <div class="reviews-badge-count">94 reviews</div>
-          </div>
-        </div>
+        </a>
       </div>
       <div class="reviews-grid">
-        <div class="review-card reveal">
-          <div class="review-card-stars">★★★★★</div>
-          <div class="review-card-text">&ldquo;Awesome staff. Blessed to work with them on their towing needs!&rdquo;</div>
-          <div class="review-card-author"><div class="review-card-avatar">G</div>Google Review</div>
-        </div>
-        <div class="review-card reveal">
-          <div class="review-card-stars">★★★★★</div>
-          <div class="review-card-text">&ldquo;I could not be happier with the service I received!&rdquo;</div>
-          <div class="review-card-author"><div class="review-card-avatar">A</div>Google Review</div>
-        </div>
-        <div class="review-card reveal">
-          <div class="review-card-stars">★★★★★</div>
-          <div class="review-card-text">&ldquo;They also addressed small concerns and took care of everything.&rdquo;</div>
-          <div class="review-card-author"><div class="review-card-avatar">G</div>Google Review</div>
-        </div>
+        <div class="review-card reveal review-card--featured" style="--av:0"><div class="review-card-stars" aria-label="5 out of 5 stars">★★★★★</div><div class="review-card-text">&ldquo;Customer service at Green Oval is top notch. All are conscientiously on the spot with information so the customer can make informed decisions. Affordable and honest, the work done at the Green Oval is always excellent and exactly as needed to keep my LR4 performing at optimal level.&rdquo;</div><button type="button" class="review-more" hidden>Read more</button><div class="review-card-author"><div class="review-card-avatar">WN</div><div><div class="review-card-name">William Nicholas</div><div class="review-card-src"><svg class="review-g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.4h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.2-2.1 3.5-5.1 3.5-8.7z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-2.9l-3.9-3c-1.1.7-2.5 1.2-4.1 1.2-3.1 0-5.8-2.1-6.7-5H1.3v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6V6.6H1.3a12 12 0 0 0 0 10.8l4-3.1z"/><path fill="#EA4335" d="M12 4.8c1.8 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 0 0 1.3 6.6l4 3.1c.9-2.9 3.6-4.9 6.7-4.9z"/></svg>Google review</div></div></div></div>
+        <div class="review-card reveal" style="--av:1"><div class="review-card-stars" aria-label="5 out of 5 stars">★★★★★</div><div class="review-card-text">&ldquo;Very professional and far more educated and experienced than the staff at the dealership. I have complete faith in Mike and his staff.&rdquo;</div><button type="button" class="review-more" hidden>Read more</button><div class="review-card-author"><div class="review-card-avatar">LR</div><div><div class="review-card-name">Larry Robertson</div><div class="review-card-src"><svg class="review-g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.4h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.2-2.1 3.5-5.1 3.5-8.7z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-2.9l-3.9-3c-1.1.7-2.5 1.2-4.1 1.2-3.1 0-5.8-2.1-6.7-5H1.3v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6V6.6H1.3a12 12 0 0 0 0 10.8l4-3.1z"/><path fill="#EA4335" d="M12 4.8c1.8 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 0 0 1.3 6.6l4 3.1c.9-2.9 3.6-4.9 6.7-4.9z"/></svg>Google review</div></div></div></div>
+        <div class="review-card reveal" style="--av:2"><div class="review-card-stars" aria-label="5 out of 5 stars">★★★★★</div><div class="review-card-text">&ldquo;Green Oval is the absolute most ethical and experienced authority on Range Rover maintenance and repair I’ve ever had the pleasure of working with. Sarah is excellent at communicating through the appointment process and Mike and his team are methodical perfectionists at diagnosis and solving any issues my Range Rover may be presenting. I always feel like it’s money well spent protecting my investment from any potential failures.&rdquo;</div><button type="button" class="review-more" hidden>Read more</button><div class="review-card-author"><div class="review-card-avatar">TJ</div><div><div class="review-card-name">Timothy Jason</div><div class="review-card-src"><svg class="review-g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.4h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.2-2.1 3.5-5.1 3.5-8.7z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-2.9l-3.9-3c-1.1.7-2.5 1.2-4.1 1.2-3.1 0-5.8-2.1-6.7-5H1.3v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6V6.6H1.3a12 12 0 0 0 0 10.8l4-3.1z"/><path fill="#EA4335" d="M12 4.8c1.8 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 0 0 1.3 6.6l4 3.1c.9-2.9 3.6-4.9 6.7-4.9z"/></svg>Google review</div></div></div></div>
+        <div class="review-card reveal" style="--av:3"><div class="review-card-stars" aria-label="5 out of 5 stars">★★★★★</div><div class="review-card-text">&ldquo;We have our two Land Rover (Defender 110 &amp; Range Rover Sport) vehicles service by Green Oval Garage. This shop has a complete and thorough understanding of Land Rover Vehicles and we have been extremely happy with their service. From simple oil changes to more complex work we have found them to be fair and professional to deal with. Their recommendations have kept us out of trouble and made our vehicles drive like new again! Highly recommended!&rdquo;</div><button type="button" class="review-more" hidden>Read more</button><div class="review-card-author"><div class="review-card-avatar">MA</div><div><div class="review-card-name">Mauro Antoniazzi</div><div class="review-card-src"><svg class="review-g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.4h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.2-2.1 3.5-5.1 3.5-8.7z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-2.9l-3.9-3c-1.1.7-2.5 1.2-4.1 1.2-3.1 0-5.8-2.1-6.7-5H1.3v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6V6.6H1.3a12 12 0 0 0 0 10.8l4-3.1z"/><path fill="#EA4335" d="M12 4.8c1.8 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 0 0 1.3 6.6l4 3.1c.9-2.9 3.6-4.9 6.7-4.9z"/></svg>Google review</div></div></div></div>
+        <div class="review-card reveal" style="--av:0"><div class="review-card-stars" aria-label="5 out of 5 stars">★★★★★</div><div class="review-card-text">&ldquo;The front and rear wheels on our Landrover LR4 were squeaking loudly when we drove and braked. Went to Green Oval Garage and they took care of the issue entirely. Not only is the squeaking completely gone, but the car drives like new again. Everyone was superfriendly too. Thank you!&rdquo;</div><button type="button" class="review-more" hidden>Read more</button><div class="review-card-author"><div class="review-card-avatar">TG</div><div><div class="review-card-name">T G</div><div class="review-card-src"><svg class="review-g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.4h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.2-2.1 3.5-5.1 3.5-8.7z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-2.9l-3.9-3c-1.1.7-2.5 1.2-4.1 1.2-3.1 0-5.8-2.1-6.7-5H1.3v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6V6.6H1.3a12 12 0 0 0 0 10.8l4-3.1z"/><path fill="#EA4335" d="M12 4.8c1.8 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 0 0 1.3 6.6l4 3.1c.9-2.9 3.6-4.9 6.7-4.9z"/></svg>Google review</div></div></div></div>
+        <div class="review-card reveal" style="--av:1"><div class="review-card-stars" aria-label="5 out of 5 stars">★★★★★</div><div class="review-card-text">&ldquo;I’ve been bringing our cars (2018 Land Rover Range Rover L405 and 2020 Land Rover Range Rover Sport L494) to Green Oval Garage for four years and couldn’t be happier. Mike, the owner/mechanic, is incredibly knowledgeable and honest—he’s quick to diagnose and find a solution, will spend the time to explain, take good care of the car, and do a great job fixing it. Sara at the front desk always answers quickly, is welcoming, and will keep me updated the whole time. Overall they’re a wonderful service because of their extensive knowledge and pricing. Highly recommend Green Oval Garage!&rdquo;</div><button type="button" class="review-more" hidden>Read more</button><div class="review-card-author"><div class="review-card-avatar">PH</div><div><div class="review-card-name">Patrick Harb</div><div class="review-card-src"><svg class="review-g" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.4h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.2-2.1 3.5-5.1 3.5-8.7z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-2.9l-3.9-3c-1.1.7-2.5 1.2-4.1 1.2-3.1 0-5.8-2.1-6.7-5H1.3v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6V6.6H1.3a12 12 0 0 0 0 10.8l4-3.1z"/><path fill="#EA4335" d="M12 4.8c1.8 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 0 0 1.3 6.6l4 3.1c.9-2.9 3.6-4.9 6.7-4.9z"/></svg>Google review</div></div></div></div>
       </div>
       <div class="reviews-cta" style="margin-top:28px;">
-        <a class="btn-green" href="https://www.google.com/search?q=green+oval+garage+reviews" target="_blank" rel="noopener">Read All Reviews</a>
-        <a class="btn-ghost" href="https://search.google.com/local/writereview?placeid=" target="_blank" rel="noopener">Leave A Review</a>
+        <a class="btn-green" href="https://www.google.com/maps?cid=13777822756130762831" target="_blank" rel="noopener">Read All Reviews on Google</a>
+        <a class="btn-ghost" href="https://search.google.com/local/writereview?placeid=ChIJp1-hVHpw54gRT7B3dcyoNL8" target="_blank" rel="noopener">Leave A Review</a>
       </div>
     </div>
   </section>
+  <script>
+  /* Long reviews: show 6 lines, with a Read more toggle */
+  (function(){
+    function setup(){
+      document.querySelectorAll('.review-card').forEach(function(c){
+        var t=c.querySelector('.review-card-text'), b=c.querySelector('.review-more');
+        if(!t||!b) return;
+        t.classList.add('clamped');
+        if(t.scrollHeight>t.clientHeight+4){ b.hidden=false; } else { t.classList.remove('clamped'); }
+        b.onclick=function(){ var open=t.classList.toggle('clamped')===false; b.textContent=open?'Show less':'Read more'; };
+      });
+    }
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',setup); else setup();
+  })();
+  </script>
 
   <!-- WHY US -->
   <section class="why-section">
